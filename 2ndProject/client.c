@@ -328,6 +328,8 @@ void writeValidMessage(client_t *client, char *pid_msg)
       badMessageAlloc();
 
     write(client->fd_log, final_msg, i);
+
+    //freeing messages so no unecessary memory is kept occupied
     free(id);
     free(seat);
     free(final_msg);
